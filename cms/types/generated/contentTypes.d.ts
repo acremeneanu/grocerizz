@@ -376,9 +376,6 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
-    ingredients: Attribute.Enumeration<
-      ['lapte', 'faina', 'apa', 'oua', 'zahar', 'sare']
-    >;
     main_picture: Attribute.Media;
     additional_pictures: Attribute.Media;
     author: Attribute.Relation<
@@ -386,9 +383,8 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    ingredients: Attribute.Blocks;
     instructions: Attribute.Blocks;
-    video: Attribute.Media;
-    slug: Attribute.UID<'api::recipe.recipe', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -769,7 +765,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    recipes: Attribute.Relation<
+    recipe: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::recipe.recipe'

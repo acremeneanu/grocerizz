@@ -18,17 +18,6 @@
     "description": {
       "type": "text"
     },
-    "ingredients": {
-      "type": "enumeration",
-      "enum": [
-        "lapte",
-        "faina",
-        "apa",
-        "oua",
-        "zahar",
-        "sare"
-      ]
-    },
     "main_picture": {
       "type": "media",
       "multiple": false,
@@ -55,25 +44,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "recipes"
+      "inversedBy": "recipe"
+    },
+    "ingredients": {
+      "type": "blocks"
     },
     "instructions": {
       "type": "blocks"
-    },
-    "video": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
     }
   }
 }
