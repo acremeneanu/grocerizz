@@ -1,12 +1,14 @@
 <script>
+	import Nav from '$lib/Nav.svelte';
 	export let data;
 </script>
 
+<Nav />
 {#await data}
 	<p>loading</p>
 {:then}
 	<div class="card-actions justify-start m-4">
-		<a href="/" class="btn btn-primary">Go back</a>
+		<a href="/recipes" class="btn btn-primary">Go back</a>
 	</div>
 
 	<div class="hero bg-base-100 px-20">
