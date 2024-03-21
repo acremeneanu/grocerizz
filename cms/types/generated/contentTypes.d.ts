@@ -385,6 +385,7 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
     >;
     ingredients: Attribute.Blocks;
     instructions: Attribute.Blocks;
+    test_json: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
