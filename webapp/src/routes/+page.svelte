@@ -1,8 +1,6 @@
 <script lang="ts">
-	import Nav from '$lib/Nav.svelte';
 </script>
 
-<Nav />
 <div class="flex justify-center p-20">
 	<p>Hello world.</p>
 </div>
